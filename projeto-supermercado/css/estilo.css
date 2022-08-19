@@ -1,0 +1,337 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 250px 1fr ;
+    /* 3 colunas "fr" fração da tela */
+    grid-template-rows: auto 1fr ;
+    min-height: 100vh;
+}
+
+
+header,
+footer {
+    grid-column: span 3;
+    /* mescla coluna*/
+    /* height: 80px; */
+    /* text-align: center; */
+    color: azure;
+}
+
+header {
+    background-color: #80C2AF;
+    /* background-color: rgb(200, 217, 228); */
+    height: 150px;
+    position: relative;
+}
+
+#logo {
+    /* display: inline-block; */
+    position: absolute;
+    width: 13em;
+    padding-left: 50px;
+    padding-top: 10px;
+}
+
+header h1 {
+    position: absolute;
+    /* display: inline-block; */
+    padding-left: 300px;
+    padding-top: 30px;
+    font-size: xx-large;
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+footer {
+    background-color: #2A2D34;
+    height: 100px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+footer i{
+    font-size: x-large;
+    padding-left: 20px;
+    /* text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; */
+}
+
+footer h4{
+    /* text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; */
+}
+
+footer p {
+    text-align: justify;
+    color: #000;
+    font-size: small;
+}
+
+nav {
+    /* background-color: brown; */
+    padding-top: 20px;
+    background-color: #30C5FF ;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+nav li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color on hover */
+nav li a:hover {
+    background-color: #2A2D34;
+    color: white;
+}
+
+aside {
+    background-color: cadetblue;
+}
+
+.conteudo {
+    /* margin: auto; */
+    margin: 0 auto;
+    background-color: #A0DDE6;
+}
+
+.conteudo h1 {
+    text-align: center;
+    color: coral;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.linha {
+    padding-left: 15%;
+}
+
+
+.linha:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.item {
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    float: left;
+    /* width: 33.33%; */
+    /* width: 50%; */
+    height: 300px;
+    /*aumente a altura de 250px para 300px, porque assim as legendas das imagens grandes não saem da caixa.*/
+    text-align: center;
+    width: 180px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: aliceblue;
+}
+
+.item:hover {
+    border: 1px solid #777;
+}
+
+.item img {
+    /* width: 90px; */
+    width: 50%;
+    height: 50%;
+    /* height: auto;  */
+}
+
+.item figcaption {
+    padding: 15px;
+    text-align: center;
+}
+
+#temperos img,
+#bebidas img,
+#higiene-limpeza img {
+    /* width: 30%; */
+    /*coloquei o width : 30%, para todas as imagens buscarem um parâmetro e entrarem na caixa */
+}
+
+input[type=text],[type=email],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit] {
+    background-color: #30C5FF;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=submit]:hover {
+    background-color: #2A2D34;
+}
+
+.formulario {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+    /* .container {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    } */
+
+    .container {
+        display: grid;
+        grid-template-columns: 100px 250px;
+        /* 3 colunas "fr" fração da tela */
+        grid-template-rows: auto 1fr auto;
+        min-height: 50vh;
+    }
+
+    header,
+    footer {
+        grid-column: span 2;
+        /* mescla coluna*/
+        /* height: 80px; */
+        /* text-align: center; */
+        color: azure;
+        height: 100px;
+    }
+
+    #logo {
+        /* display: inline-block; */
+        /* position: absolute; */
+        width: 100px;
+        padding-left: 40px;
+        padding-top: 10px;
+    }
+
+    header h1 {
+        /* position: absolute; */
+        /* display: inline-block; */
+        padding-left: 30px;
+        padding-top: 60px;
+        font-size: large;
+        color: white;
+        text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    }
+
+    figure {
+        border: 1px solid #000;
+    }
+
+    aside {
+        display: none;
+    }
+
+    .conteudo {
+        /* margin: auto; */
+        /* padding-left: 10%; */
+    }
+
+    .linha {
+        padding: 30px;
+    }
+
+    .item {
+        margin: 5px;
+        border: 1px solid #ccc;
+        /* float: left; */
+        /* width: auto; */
+        /* width: 33.33%; */
+        /* height: auto; */
+        /* height: 250px;  */
+        text-align: center;
+        width: 180px;
+        height: 150px;
+    }
+
+    .item img {
+        /* width: 90px; */
+        width: 20%;
+        height: 20%;
+        /* height: auto;  */
+    }
+
+    nav ul {
+        width: 100px;
+        font-size: small;
+    }
+
+    nav {
+        width: 100px;
+    }
+
+    .col-25,
+    .col-75,
+    input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    footer {
+        background-color: #2A2D34;
+        height: 80px;
+        text-align: center;
+        padding-top: 5px;
+        font-size: medium;
+    }
+    footer i{
+        /* text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; */
+        font-size: medium;
+        padding-left: 20px;
+    }
+
+    footer p {
+        display: flex;
+    }
+}
